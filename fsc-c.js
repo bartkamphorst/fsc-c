@@ -27,9 +27,13 @@ jQuery(function($) {
       circlesData[id + "-overlap"] = overlapPercentage;
       console.log(circlesData);
       console.log(circlesData[id]);
-      //uncomment the following 2 lines to display current numbers on screen
+      // Uncomment the following 2 lines to display current numbers on screen, given that the page includes two div elements with ids 'left' and 'percent'.
       // $('#left').text(leftPos);
       // $('#percent').text(overlapPercentage + '%');
+			// Qualtrics only: Uncomment the following 2 lines to store the values as Qualtrics embeddedData.
+			// Notice that these embedded data has to be added explicitly in the survey flow in order for them to show up in your data exports.
+      // Qualtrics.SurveyEngine.setEmbeddedData(id + "-distance", leftPos);
+      // Qualtrics.SurveyEngine.setEmbeddedData(id + "-overlap", overlapPercentage);
     }
   });
 });
