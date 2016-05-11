@@ -29,7 +29,9 @@ To add the FSC-C measure to a webpage, follow these steps.
   </div>
 </div>
 ```
-(Make sure that the div elements have the `circles` class so that they are styled properly.)
+Notice that the id includes a number (1). This is not strictly necessary, but it allows for multiple instances of the measure to be included on one page. Just make sure that each id is unique.
+
+(Also, ensure that the div elements have the `circles` class so that they are styled properly. If the elements do not show up as circles, check that you have included the CSS / that the CSS is loaded properly.)
 
 * Profit!
 
@@ -66,6 +68,8 @@ Typically, you'll want to store the measure's values. How to do so will depend o
 
 **Notice that it is possible to use Qualtrics' text editor for editing the 'Header' field by clicking the 'edit' link, but make sure to use the 'Source' option if you decide to do so.**
 
+* Uncomment the two lines that call Qualtrics' Qualtrics.SurveyEngine.setEmbeddedData(key, value) method. This is needed to store the FSC-C's values.
+
 * Click 'Save' to return to your survey.
 
 ### Step three: Adding custom HTML to a question to enable the FSC-C measure.
@@ -87,13 +91,14 @@ Typically, you'll want to store the measure's values. How to do so will depend o
 </div>
 ```
 
-# Step four: Adding embeddedData fields for storing values
+### Step four: Adding embeddedData fields for storing values
 
 * Go to 'Survey Flow'
 * Add a new Embedded Data Field Name that corresponds to the _id_ of the moving circle, with the string '-overlap' appended. With the example code from the previous step, the field name would thus become 'circle-drag-1-overlap'.
 * Repeat the previous step, only with the suffix '-distance'. With the example code from the previous step, the field name would thus become 'circle-drag-1-distance'.
 
-# Step five: Check if your setup is working
+
+### Step five: Check if your setup is working
 
 * Run through your survey and look at the responses. 
 * If all is well, you'll see embeddedData fields with the values of the FSC-C measure.
