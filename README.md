@@ -3,9 +3,10 @@ A continuous measure of future-self continuity, developed for the web.
 
 For a live demo, click [here](http://jsfiddle.net/xgdVM/113/embedded/result/).
 
-If you use this software for academic purposes, please cite the following article: 
+If you use this software for academic purposes, please cite the following [article](https://d1wqtxts1xzle7.cloudfront.net/79322870/9bd00941680a51ad5c7213880c29f8569d05-libre.pdf?1642840632=&response-content-disposition=inline%3B+filename%3DIntroducing_a_Continuous_Measure_of_Futu.pdf&Expires=1645360276&Signature=R3nSj9bJsog03hJMabhM4evIOxn1ThkSCsRO3~F~vjW1dS5K4pvC3cuNz-utxqs5MnXkRaePTYzctg07mbQerBur8tquinSWIH8hQNOTZKpkcD~2pnxPOp-y2RHgYd~~5fyll9MSmfiI11JquLIX4EUxPCIdMSMFFnUKWAZL3VlaCe50ovSRt1oX5nQ1ki1qxF-XElNNSKc2zEtE~CtFVPCqdLALuTUcQxP2ykx0YjxZmq56pzg9Rsdj4u4kkREU9IFqRpWmnkiT74PFcHy-WK1K~~5TujSFV7lk6J7zCPJD8vZPPewY4xKCnCDjVyE8TWlTTkggSpaGs3G4dPCbVg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA): 
 
   Kamphorst, B. A., Nauts, S. & Blouin-Hudon, E.-M. (in press). Introducing a Continuous Measure of Future Self-Continuity. _Social Science Computer Review_.
+
 
 # Instructions in a nutshell
 
