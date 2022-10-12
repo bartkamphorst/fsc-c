@@ -7,6 +7,10 @@ If you use this software for academic purposes, please cite the following [artic
 
   Kamphorst, B. A., Nauts, S. & Blouin-Hudon, E.-M. (2016). Introducing a Continuous Measure of Future Self-Continuity. _Social Science Computer Review_ 35(3).
 
+![Screenshot 2022-10-12 at 16 28 58](https://user-images.githubusercontent.com/571173/195370528-12c6ceb0-111c-483c-b14d-029ca053d166.png)
+![Screenshot 2022-10-12 at 16 29 07](https://user-images.githubusercontent.com/571173/195370517-e6f80efa-b238-4596-82ee-30fba6fdb449.png)
+
+
 
 # Instructions in a nutshell
 
