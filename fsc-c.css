@@ -1,11 +1,11 @@
-.circle-container {
+.fsc-c-circle-container {
   width: 300px;
   /*border:1px solid red;*/
   position: relative;
   height: 100px
 }
 
-.circles {
+.fsc-c-circles {
   text-align: center;
   width: 100px;
   height: 100px;
@@ -19,14 +19,14 @@
   position: absolute;
 }
 
-.circles span {
+.fsc-c-circles span {
   display: table-cell;
   vertical-align: bottom;
   width: inherit;
   height: inherit;
 }
 
-div[id*=circle-drag] {
+.fsc-c-draggable {
   background: #02F902;
   z-index: 99;
   opacity: 0.7;
@@ -34,6 +34,6 @@ div[id*=circle-drag] {
   left: 100px;
 }
 
-div[id*=circle-drag] span {
+.fsc-c-draggable span {
   vertical-align: top;
 }
