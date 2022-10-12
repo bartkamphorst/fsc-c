@@ -4,46 +4,38 @@ jQuery(function($) {
 
   //container width defined in css, 300px
 
-  $('.circle-container div[id*=circle-drag]').draggable({
+  $('.fsc-c-circle-container .fsc-c-draggable').draggable({
     containment: 'parent',
     axis: 'x',
     stop: function(e, ui) {
-      var t = $(this);
-      var containerWidth = t.parent().width(),
-        leftPos = 0, //left position inside 300px container
-        overlapPercentage = 0, // percentage
-        width = t.width(); //width/dia of circles
+      var element = $(this);
+      var containerWidth = element.parent().width(),
+      leftPos = 0,              // left position inside 300px container
+      overlapPercentage = 0,    // percentage
+      width = element.width();  // width/diameter of circles
 
       leftPos = (2 * width + ui.position.left) - containerWidth;
       overlap = leftPos < 0 ? 0 : Math.round((leftPos / width) * 100);
 
       var area = intersectArea(leftPos, 0, width / 2, width, 0, width / 2);
-      // since y coordinates of both circles are fixed, hence taken 0, and x2 coordinate of the othe rcircle is also fixed, so taken 'width', the diameter of the both circles, i.e. same. 
+      // since y coordinates of both circles are fixed, hence taken 0, and x2 coordinate of the other circle is also fixed, so taken 'width', the diameter of the both circles, i.e. same.
 
       overlapPercentage = Math.round(100 * area / (Math.PI * width * width / 4));
 
-      var id = t.attr('id');
-      circlesData[id + "-distance"] = leftPos;
-      circlesData[id + "-overlap"] = overlapPercentage;
-      console.log(circlesData);
-      console.log(circlesData[id]);
-      // Uncomment the following 2 lines to display current numbers on screen, given that the page includes two div elements with ids 'left' and 'percent'.
-      // $('#left').text(leftPos);
-      // $('#percent').text(overlapPercentage + '%');
-	    
-      // Qualtrics only: Uncomment the following 2 lines to store the values as Qualtrics embeddedData
-	    // Notice that these embedded data has to be added explicitly in the survey flow in order for them to show up in your data exports.
-      // Qualtrics.SurveyEngine.setEmbeddedData(id + "-distance", leftPos);
-      // Qualtrics.SurveyEngine.setEmbeddedData(id + "-overlap", overlapPercentage);
-	    
-      // Qualtrics only: Uncomment the following lines into the survey flow when using multiple measures of self-continuity to send multiple data 
-	    // Otherwise each measure will be sent through same embedded data code and overwritten
-      // Object.entries(circlesData).forEach(([columnId, value]) => {
-      // console.log("we want to send ", value, " to id ", columnId)
-      // Qualtrics.SurveyEngine.setEmbeddedData(columnId, value);
-      //})
-	    
-	    
+      var id = element.attr('id');
+      circlesData[id] = {'distance': leftPos, 'overlap': overlapPercentage}
+
+      // TODO: for each element, try if there's a corresponding div to show the values
+      Object.entries(circlesData).forEach(([key, values]) => {
+        if ( $('#' + key + '-distance').length && key == id) {
+          $('#' + key + '-distance').text(leftPos);
+        }
+        if ( $('#' + id + '-overlap').length && key == id) {
+          $('#' + id + '-overlap').text(overlapPercentage + '%');
+        }
+      })  
+      // Send data up the line for further handling
+      $(this).trigger("fsc-c:data", circlesData);
     }
   });
 });
