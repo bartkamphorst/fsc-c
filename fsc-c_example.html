@@ -1,13 +1,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/bartkamphorst/fsc-c@5e76fc9/fsc-c.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bartkamphorst/fsc-c@5e76fc9/fsc-c.css">
 
 <body>
-  <div class="fsc-c circle-container">
-    <div class="fsc-c circles" id="circle-drag-1"><span>future self</span></div>
-    <div class="fsc-c circles"><span>present self</span></div>
+  <div class="fsc-c-circle-container">
+    <div class="fsc-c-circles fsc-c-draggable" id="fsc-c-1"><span>future self</span></div>
+    <div class="fsc-c-circles"><span>present self</span></div>
   </div>
-  <div id="left">0</div>
-  <div id="percent">0%</div>
-  
+  <div id="fsc-c-1-distance">0</div>
+  <div id="fsc-c-1-overlap">0%</div>    
 </body>
+
+<script>
+  jQuery(function($) {
+    $( ".fsc-c-draggable" ).on( "fsc-c:data", function(event, data) {
+      // process the data
+      Object.entries(data).forEach(([id, values]) => {
+        console.log(id + '-distance', values['distance']);
+        console.log(id + '-overlap', values['overlap']);
+      // Qualtrics only: Uncomment the following lines into the survey flow to store the values as Qualtrics embeddedData.
+	    // Notice that these embedded data has to be added explicitly in the survey flow in order for them to show up in your data exports.
+      // Qualtrics.SurveyEngine.setEmbeddedData(id + '-distance', values['distance']);
+      // Qualtrics.SurveyEngine.setEmbeddedData(id + '-overlap', values['overlap']);
+      })
+    })
+  });
+</script>
