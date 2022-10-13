@@ -129,7 +129,7 @@ Hit the 'Apply' button to save.
 * Repeat the previous step, only with the suffix '-overlap'. With the example code from the previous step, the field name would thus become 'fsc-c-1-overlap'.
 * Click on 'Apply' to save your changes.
 
-### Step four: Adding custom Javascript to actually store the FSC-C values
+### Step five: Adding custom Javascript to actually store the FSC-C values
 
 * Navigate to 'Question behavior' for this question, and click on 'JavaScript'. You will be shown a text editor with three predefined functions (addOnload, addOnReady, and addOnUnload). 
 * Place your cursor in the addOnload function and paste in the following javascript:
